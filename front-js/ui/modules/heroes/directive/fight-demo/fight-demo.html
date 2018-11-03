@@ -1,3 +1,14 @@
 <div>
-    <button class="btn btn-lg btn-primary">BRAWL</button>
+    <div style="border: solid 1px red">
+        <hero-stats stats="hero1"></hero-stats>
+    </div>
+    <hr/>
+    <div style="border: solid 1px green">
+        <hero-stats stats="hero2"></hero-stats>
+    </div>
+    <table ng-show="lines" class="table">
+        <tr class="row" ng-repeat="line in lines track by $index">
+            <td class="col-lg-2" ng-show="$index <= lineIndex">{{line}}</td>
+        </tr>
+    </table>
 </div>

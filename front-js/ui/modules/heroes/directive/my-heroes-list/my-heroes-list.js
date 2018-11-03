@@ -1,4 +1,4 @@
-angular.module('heroes').directive('myHeroesList', function ($rootScope, auctionService) {
+angular.module('heroes').directive('myHeroesList', function ($rootScope, gameService) {
     return {
         restrict: 'E',
         replace: true,
@@ -26,7 +26,7 @@ angular.module('heroes').directive('myHeroesList', function ($rootScope, auction
             });
 
             scope.reload = () => {
-                auctionService.myTokens(scope.address).then((items) =>
+                gameService.myTokens(scope.address).then((items) =>
                     $rootScope.safeApply(() => scope.heroes = items));
             }
         }

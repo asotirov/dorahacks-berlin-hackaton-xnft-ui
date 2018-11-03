@@ -22,6 +22,12 @@ angular.module('base').directive('mainNav', function () {
                     sref: 'base.marketplace',
                     label: 'Marketplace',
                     base: 'marketplace'
+                }, {
+                    sref: 'base.world-map',
+                    label: 'Explore Map',
+                    id1: 9,
+                    id2: 11,
+                    base: 'world-map'
                 }
             ];
 

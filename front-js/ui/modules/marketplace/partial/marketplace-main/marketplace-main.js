@@ -1,7 +1,7 @@
-angular.module('marketplace').controller('MarketplaceMainCtrl', function ($scope, $rootScope, configService, auctionService, marketplaceService) {
+angular.module('marketplace').controller('MarketplaceMainCtrl', function ($scope, $rootScope, configService, gameService, marketplaceService) {
     $scope.myAddress = configService.get().myAddress;
     $scope.reloadAuctions = () => {
-        auctionService.get().then((auctions) => $rootScope.safeApply(() => $scope.auctions = auctions));
+        gameService.get().then((auctions) => $rootScope.safeApply(() => $scope.auctions = auctions));
     };
     $scope.create = {startPrice: 5000000000, endPrice: 100000000, duration: 30};
     $scope.createSaleAuction = async (create) => {

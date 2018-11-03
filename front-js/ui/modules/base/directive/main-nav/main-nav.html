@@ -9,8 +9,10 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><img width="40" height="40" src="/css/images/logoto1.png"></li>
-                <li ng-repeat="section in sections" ng-class="{active: $state.includes(section.base)}"><a
-                    ui-sref="{{section.sref}}">{{ section.label }}</a></li>
+                <li ng-repeat="section in sections" ng-class="{active: $state.includes(section.base)}">
+                    <a ng-if="section.id1" ui-sref="{{section.sref}}({id1: {{section.id1}}, id2: {{section.id2}}})">{{ section.label }}</a>
+                    <a ng-if="!section.id1" ui-sref="{{section.sref}}">{{ section.label }}</a>
+                </li>
             </ul>
             <span class="nav navbar-expand-lg">
                 <configurator></configurator>

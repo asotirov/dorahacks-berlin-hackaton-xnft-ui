@@ -1,4 +1,4 @@
-angular.module('neoNftUi', ['ui.bootstrap', 'ui.router', 'ngAnimate', 'base', 'brawl', 'breed', 'marketplace', 'heroes']);
+angular.module('neoNftUi', ['ui.bootstrap', 'ui.router', 'ngAnimate', 'base', 'brawl', 'breed', 'marketplace', 'heroes', 'worldMap']);
 
 angular.module('neoNftUi').config(function ($stateProvider, $urlRouterProvider) {
 
