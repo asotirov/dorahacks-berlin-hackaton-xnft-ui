@@ -1,0 +1,10 @@
+<div ng-controller="WorldMapExplorerCtrl">
+    <h3>{{apiHeight}}</h3>
+    <div class="alert alert-success" ng-show="!engaged">Agility Nexus nearby. Choose whether to engage!</div>
+    <div class="alert alert-warning" ng-show="engaged && !fighting">Players engaging to capture near Agility Nexus!</div>
+    <div class="alert alert-danger" ng-show="fighting">Players are fighting!</div>
+    <div ng-show="!fighting">
+        <img ng-src="{{imageUrl}}" width="500px" ng-click="selected()"/>
+    </div>
+    <fight-demo hero1="hero1" hero2="hero2" control="fightControl"></fight-demo>
+</div>
