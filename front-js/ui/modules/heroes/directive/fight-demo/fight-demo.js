@@ -10,18 +10,22 @@ angular.module('heroes').directive('fightDemo', function ($rootScope, gameServic
         templateUrl: 'modules/heroes/directive/fight-demo/fight-demo.html',
         link: function (scope, element, attrs, fn) {
             let interval = 600;
+            let fightInterval;
             scope.$watch('control', (control) => {
                 if (control) {
                     control.fight = () => {
                         gameService.fight(scope.hero1.id, scope.hero2.id).then((lines) => {
                             scope.lines = lines;
                             scope.lineIndex = 0;
-                            setInterval(() => {
+                            fightInterval = setInterval(() => {
                                 $rootScope.safeApply(() => scope.lineIndex++);
                             }, interval);
                         });
                     }
                 }
+            });
+            scope.$on('$destroy', () => {
+                clearInterval(fightInterval);
             });
         }
     };

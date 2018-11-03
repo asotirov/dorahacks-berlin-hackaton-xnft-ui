@@ -26,7 +26,7 @@ angular.module('worldMap').controller('WorldMapExplorerCtrl', function ($scope, 
         $scope.currentPosition += move;
     };
     $scope.$watch('currentPosition', () => {
-        if ($scope.currentPosition >= movesToEngaged) {
+        if ($scope.currentPosition >= movesToEngaged && !$scope.fighting) {
             $scope.fighting = true;
             $scope.fightControl.fight();
         }
@@ -36,13 +36,16 @@ angular.module('worldMap').controller('WorldMapExplorerCtrl', function ($scope, 
             $scope.advanceGame();
         }
     });
-    setInterval(() => {
+    let interval = setInterval(() => {
         gameService.apiHeight().then((apiHeight) => {
             $rootScope.safeApply(() => {
                 $scope.apiHeight = apiHeight;
             });
         })
     }, 1000);
+    $scope.$on('$destroy', () => {
+        clearInterval(interval);
+    });
     $scope.start = () => {
         $scope.engaged = true;
         $scope.currentPosition = 0;

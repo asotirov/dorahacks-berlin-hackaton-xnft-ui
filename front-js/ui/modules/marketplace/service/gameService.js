@@ -8,8 +8,8 @@ angular.module('marketplace').factory('gameService', function ($http) {
             return $http.get(`${baseUrl}/height`).then(response => response.data);
         },
         fight(hero1Id, hero2Id) {
-            return Promise.resolve(['Player1 attacks', 'Player2 attacks', 'Player2 Wins!']);
-            return $http.get(`${baseUrl}/fight?id1=${hero1Id}&id2=${hero2Id}`).then(response => response.data);
+            // return Promise.resolve(['Player1 attacks', 'Player2 attacks', 'Player2 Wins!']);
+            return $http.get(`${baseUrl}/battle?player1=${hero1Id}&player2=${hero2Id}`).then(response => response.data);
         },
         myTokens(address) {
             let otherAddress = window.neo.getByteArrayAddress(address);

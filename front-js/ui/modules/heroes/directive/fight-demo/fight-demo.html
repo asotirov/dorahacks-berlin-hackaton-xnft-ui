@@ -1,14 +1,19 @@
 <div>
-    <div style="border: solid 1px red">
+    <div style="border: double 2px green">
         <hero-stats stats="hero1"></hero-stats>
     </div>
     <hr/>
-    <div style="border: solid 1px green">
+    <div style="border: double 2px red">
         <hero-stats stats="hero2"></hero-stats>
     </div>
     <table ng-show="lines" class="table">
+        <tr class="row">
+            <td class="col-lg-1" style="border: dashed 1px green">{{hero1.health}}</td>
+            <td class="col-lg-1" style="border: dashed 1px red">{{hero2.health}}</td>
+        </tr>
         <tr class="row" ng-repeat="line in lines track by $index">
-            <td class="col-lg-2" ng-show="$index <= lineIndex">{{line}}</td>
+            <td class="col-lg-1" style="border: dashed 1px green" ng-show="$index <= lineIndex">{{$index%2 === 1 ? line: ''}}</td>
+            <td class="col-lg-1" style="border: dashed 1px red" ng-show="$index <= lineIndex">{{$index%2 === 0 ? line: ''}}</td>
         </tr>
     </table>
 </div>
