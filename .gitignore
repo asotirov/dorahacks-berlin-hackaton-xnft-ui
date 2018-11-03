@@ -1,0 +1,10 @@
+front-js/**/dist/
+front-js/**/temp/
+front-js/**/node_modules/
+front-js/ui/bower_components/
+front-js/**/.idea/workspace.xml
+front-js/ui/.idea/vcs.xml
+front-js/ui/.idea/ui.iml
+front-js/ui/.idea/modules.xml
+front-js/ui/.idea/misc.xml
+front-js/ui/package-lock.json
