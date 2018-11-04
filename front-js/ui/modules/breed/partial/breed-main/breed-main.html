@@ -1,3 +1,6 @@
 <div ng-controller="BreedMainCtrl">
-    BREED
+    <my-heroes-list address="myAddress" reload="reload" ng-model="hero1"></my-heroes-list>
+    <my-heroes-list address="myAddress" reload="reload1" ng-model="hero2"></my-heroes-list>
+    <button class="btn btn-lg btn-primary" ng-click="breeding=true;breedControl.breed()">Breed</button>
+    <breed-demo hero1="hero1" hero2="hero2" ng-show="breeding" control="breedControl"></breed-demo>
 </div>

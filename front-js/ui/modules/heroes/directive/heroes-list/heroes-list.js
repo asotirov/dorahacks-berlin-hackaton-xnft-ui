@@ -134,7 +134,7 @@ angular.module('heroes').directive('heroesList', function ($compile, nftService)
                                             </div>
 
                                             <div class="tooltip-extension ">
-                                                <div class="flavor">Generation of ${stats.gen || 0}</div>
+                                                <div class="flavor">Generation of ${stats.level || 0}</div>
                                             </div>
                                         </div>
                                     </div>

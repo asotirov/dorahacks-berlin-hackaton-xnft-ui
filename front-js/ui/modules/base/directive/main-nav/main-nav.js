@@ -25,8 +25,8 @@ angular.module('base').directive('mainNav', function () {
                 }, {
                     sref: 'base.world-map',
                     label: 'Explore Map',
-                    id1: 9,
-                    id2: 11,
+                    id1: 28,
+                    id2: 13,
                     base: 'world-map'
                 }
             ];
