@@ -14,6 +14,7 @@ angular.module('heroes').directive('fightDemo', function ($rootScope, gameServic
             scope.$watch('control', (control) => {
                 if (control) {
                     control.fight = () => {
+                        clearInterval(fightInterval);
                         gameService.fight(scope.hero1.id, scope.hero2.id).then((lines) => {
                             scope.lines = lines;
                             scope.lineIndex = 0;
